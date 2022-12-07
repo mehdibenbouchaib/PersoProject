@@ -21,11 +21,9 @@ class MyAccountManager(BaseUserManager):
             email=self.normalize_email(email),
             password=password,
             username=username,
-
         )
         user.is_admin = True
         user.is_staff = True
         user.is_superuser = True
         user.save(using=self._db)
         return user
-

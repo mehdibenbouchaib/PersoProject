@@ -12,3 +12,6 @@ class AccountFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Account
 
+    class Params:
+        superuser = factory.Trait(is_staff=True, is_superuser=True)
+        staff = factory.Trait(is_staff=True)
